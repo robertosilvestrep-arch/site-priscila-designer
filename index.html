@@ -78,6 +78,28 @@
   .whatsapp-float:hover { transform: scale(1.1); background-color: #20BA5A; }
   .loading-msg { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.85rem; }
 
+  .contact-section { padding: 80px 0; background-color: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .contact-info { background-color: var(--light-bg); border-radius: 16px; padding: 32px; }
+  .contact-info h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 20px; }
+  .contact-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: 0.95rem; color: var(--text-muted); }
+  .contact-info-item svg { flex-shrink: 0; color: var(--accent); }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .contact-form label { font-size: 0.8rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: block; }
+  .contact-form input, .contact-form textarea { width: 100%; padding: 12px 14px; border: 2px solid #E5E7EB; border-radius: 10px; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s ease; }
+  .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); }
+  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-submit-btn { background-color: var(--accent); color: var(--white); border: none; padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; }
+  .contact-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230,57,70,0.3); }
+  .contact-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-status { font-size: 0.9rem; padding: 10px 14px; border-radius: 8px; display: none; }
+  .form-status.success { display: block; background-color: #ECFDF5; color: #065F46; }
+  .form-status.error { display: block; background-color: #FEF2F2; color: #991B1B; }
+
+  @media (max-width: 968px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 968px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
     .hero-content h1 { font-size: 2.4rem; }
@@ -105,6 +127,7 @@
       <a href="#inicio" class="nav-link">Início</a>
       <a href="#projetos" class="nav-link">Projetos</a>
       <a href="#metodologia" class="nav-link">Como Funciona</a>
+      <a href="#contato" class="nav-link">Contato</a>
       <a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila!" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px;font-size:0.9rem;">Contato WhatsApp</a>
     </nav>
   </div>
@@ -186,6 +209,51 @@
     <h2>Vamos concretizar esse sonho juntos?</h2>
     <p>Clique no botão abaixo para conversar comigo agora mesmo pelo WhatsApp.</p>
     <a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila,%20vi%20sua%20p%C3%A1gina%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!" target="_blank" class="btn btn-whatsapp" style="font-size:1.2rem;padding:18px 40px;">Falar com a Priscila no WhatsApp</a>
+  </div>
+</section>
+
+<section class="contact-section" id="contato">
+  <div class="container">
+    <h2 class="section-title">Fale Comigo</h2>
+    <p class="section-subtitle">Preencha o formulário abaixo com sua dúvida ou pedido de orçamento. Retorno o mais rápido possível.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Outras formas de contato</h3>
+        <div class="contact-info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>priscilabdesignerpg@gmail.com</span>
+        </div>
+        <div class="contact-info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(13) 99802-1412</span>
+        </div>
+        <div class="contact-info-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Praia Grande e Região Metropolitana de SP</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div>
+          <label for="form-nome">Nome</label>
+          <input type="text" id="form-nome" name="name" required placeholder="Seu nome completo">
+        </div>
+        <div>
+          <label for="form-email">E-mail</label>
+          <input type="email" id="form-email" name="email" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div>
+          <label for="form-telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="form-telefone" name="phone" required placeholder="(13) 99999-9999">
+        </div>
+        <div>
+          <label for="form-mensagem">Mensagem</label>
+          <textarea id="form-mensagem" name="message" required placeholder="Conte um pouco sobre seu projeto ou dúvida..."></textarea>
+        </div>
+        <button type="submit" class="contact-submit-btn" id="contact-submit-btn">Enviar Mensagem</button>
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -288,6 +356,45 @@
 
   renderTabs();
   renderProjects();
+
+  // ---- Formulário de Contato (envia via Formspree) ----
+  // ⚠️ Troque SEU_FORM_ID abaixo pelo ID gerado no formspree.io (veja instruções)
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/SEU_FORM_ID";
+
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('contact-submit-btn');
+  const statusEl = document.getElementById('form-status');
+
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+    statusEl.className = "form-status";
+    statusEl.textContent = "";
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        statusEl.className = "form-status success";
+        statusEl.textContent = "Mensagem enviada com sucesso! Retornaremos em breve.";
+        contactForm.reset();
+      } else {
+        throw new Error("Falha no envio");
+      }
+    } catch (err) {
+      statusEl.className = "form-status error";
+      statusEl.textContent = "Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Enviar Mensagem";
+    }
+  });
 </script>
 
 </body>

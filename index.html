@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priscila Barbosa | Designer de Interiores</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1A1A1A; line-height: 1.6; }
+
+  :root {
+    --primary: #2B2D42; --secondary: #8D99AE; --accent: #E63946;
+    --light-bg: #F8F9FA; --white: #FFFFFF; --text-muted: #555555;
+  }
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; border: none; }
+  .btn-primary { background-color: var(--accent); color: var(--white); box-shadow: 0 4px 15px rgba(230,57,70,0.3); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); opacity: 0.95; }
+  .btn-whatsapp { background-color: #25D366; color: var(--white); box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+  .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); opacity: 0.95; }
+  .section-title { font-size: 2.2rem; color: var(--primary); text-align: center; margin-bottom: 12px; font-weight: 700; }
+  .section-subtitle { font-size: 1.1rem; color: var(--text-muted); text-align: center; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+  .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+  .logo-name { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+  .logo-sub { font-size: 0.7rem; color: var(--accent); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-menu { display: flex; gap: 32px; align-items: center; }
+  .nav-link { font-weight: 500; color: var(--primary); transition: all 0.3s ease; }
+  .nav-link:hover { color: var(--accent); }
+  .hero { padding: 60px 0 80px; background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero-content h1 { font-size: 3rem; line-height: 1.2; color: var(--primary); margin-bottom: 8px; font-weight: 700; }
+  .hero-subtitle { font-size: 1.3rem; color: var(--accent); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
+  .hero-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; }
+  .hero-image-container { display: flex; justify-content: center; }
+  .hero-img-box { width: 100%; max-width: 420px; height: 480px; background-color: var(--secondary); border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; border: 5px solid var(--white); }
+  .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
+  .home-projects { padding: 60px 0; background-color: var(--light-bg); }
+  .home-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+  .home-project-card { background-color: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+  .home-project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .home-project-img { height: 260px; overflow: hidden; }
+  .home-project-img img { width: 100%; height: 100%; object-fit: cover; }
+  .home-project-info { padding: 16px; }
+  .home-project-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 4px; }
+  .home-project-info span { font-size: 0.85rem; color: var(--text-muted); }
+  .projects { padding: 80px 0; background-color: var(--light-bg); }
+  .projects-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+  .tab-btn { padding: 12px 24px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--primary); background-color: transparent; color: var(--primary); }
+  .tab-btn:hover { background-color: var(--primary); color: var(--white); }
+  .tab-btn.active { background-color: var(--accent); border-color: var(--accent); color: var(--white); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+  .project-card { background-color: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+  .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .project-img-wrapper { height: 240px; overflow: hidden; }
+  .project-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+  .project-card-bottom { padding: 16px; text-align: center; }
+  .project-pdf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background-color: var(--primary); color: var(--white); border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: none; font-family: inherit; }
+  .project-pdf-btn:hover { background-color: var(--accent); transform: translateY(-2px); }
+  .steps { padding: 80px 0; background-color: var(--white); }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 40px; }
+  .step-card { text-align: center; padding: 30px; border-radius: 16px; background-color: var(--light-bg); transition: all 0.3s ease; }
+  .step-card:hover { background-color: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .step-icon { width: 70px; height: 70px; background-color: #FFF5F5; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; font-size: 1.8rem; font-weight: 700; }
+  .step-card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 12px; }
+  .cta-section { padding: 80px 0; background-color: var(--primary); color: var(--white); text-align: center; }
+  .cta-content { max-width: 700px; margin: 0 auto; }
+  .cta-content h2 { font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+  .cta-content p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; }
+  footer { background-color: #1A1A2E; color: #A0A5C0; padding: 40px 0; font-size: 0.95rem; }
+  .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-socials { display: flex; gap: 20px; }
+  .footer-socials a:hover { color: var(--white); }
+  .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; }
+  .whatsapp-float:hover { transform: scale(1.1); background-color: #20BA5A; }
+  .loading-msg { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.85rem; }
+
+  @media (max-width: 968px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .hero-content h1 { font-size: 2.4rem; }
+    .hero-image-container { order: -1; }
+    .nav-menu { display: none; }
+    .cta-content h2 { font-size: 2.2rem; }
+    .home-projects-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila,%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20de%20projeto%20com%20voc%C3%AA!" class="whatsapp-float" target="_blank" aria-label="Chamar no WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.973 0c3.184.001 6.177 1.24 8.43 3.496 2.253 2.256 3.491 5.249 3.491 8.434 0 6.583-5.337 11.931-11.91 11.931-2.006-.001-3.98-.507-5.732-1.47L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.85-6.892-1.84-1.842-4.29-2.856-6.892-2.858-5.437 0-9.862 4.371-9.867 9.744-.002 2.112.551 4.175 1.599 5.952l-.24 1.345c-.44 2.473-1.127 4.968-1.127 4.968l5.05-1.321c1.644.896 3.248 1.341 4.634 1.342zm11.46-7.558c-.305-.153-1.805-.891-2.084-.993-.28-.102-.483-.153-.686.153-.203.305-.788.993-.965 1.196-.178.203-.356.229-.661.076-.305-.152-1.287-.474-2.451-1.511-.906-.808-1.517-1.806-1.695-2.111-.178-.305-.019-.47.133-.621.137-.136.305-.356.457-.534.153-.178.203-.305.305-.509.102-.203.051-.381-.025-.534-.076-.153-.686-1.654-.94-2.264-.247-.595-.501-.515-.686-.525-.178-.008-.381-.01-.584-.01-.203 0-.534.076-.814.381-.28.305-1.067 1.042-1.067 2.542 0 1.5 1.092 2.948 1.245 3.151.153.203 2.15 3.284 5.207 4.603.726.313 1.292.5 1.734.641.73.232 1.393.199 1.917.121.584-.087 1.805-.737 2.059-1.449.254-.712.254-1.322.178-1.449-.076-.127-.28-.203-.584-.356z"/></svg>
+</a>
+
+<header>
+  <div class="container nav-container">
+    <div>
+      <div class="logo-name">Priscila Barbosa</div>
+      <div class="logo-sub">Designer de Interiores</div>
+    </div>
+    <nav class="nav-menu">
+      <a href="#inicio" class="nav-link">Início</a>
+      <a href="#projetos" class="nav-link">Projetos</a>
+      <a href="#metodologia" class="nav-link">Como Funciona</a>
+      <a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila!" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px;font-size:0.9rem;">Contato WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Priscila Barbosa</h1>
+      <div class="hero-subtitle">Designer de Interiores</div>
+      <p>Projetos residenciais inteligentes, acolhedores e totalmente personalizados. Especialista em trazer sofisticação e otimização para todos os tipos de espaços.</p>
+      <a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila,%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20projeto!" target="_blank" class="btn btn-primary">Quero Transformar Meu Espaço</a>
+    </div>
+    <div class="hero-image-container">
+      <div class="hero-img-box">
+        <img id="img-priscila" src="images/priscila.jpg" alt="Priscila Barbosa - Designer de Interiores">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-projects">
+  <div class="container">
+    <h2 class="section-title">Ambientes em Destaque</h2>
+    <p class="section-subtitle">Conheça alguns dos nossos projetos de ambientes residenciais.</p>
+    <div class="home-projects-grid">
+      <div class="home-project-card">
+        <div class="home-project-img"><img id="img-cozinha-1" src="images/cozinha.jpeg" alt="Cozinha planejada"></div>
+        <div class="home-project-info"><h3>Cozinha Planejada</h3><span>Cozinha</span></div>
+      </div>
+      <div class="home-project-card">
+        <div class="home-project-img"><img id="img-dormitorio-1" src="images/dormitorio.jpeg" alt="Dormitório"></div>
+        <div class="home-project-info"><h3>Dormitório Funcional</h3><span>Quarto</span></div>
+      </div>
+      <div class="home-project-card">
+        <div class="home-project-img"><img id="img-sala-1" src="images/sala.jpeg" alt="Sala de estar"></div>
+        <div class="home-project-info"><h3>Sala de Estar</h3><span>Sala</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projetos">
+  <div class="container">
+    <h2 class="section-title">Projetos</h2>
+    <p class="section-subtitle">Confira nossos projetos realizados. Clique para ver o projeto completo.</p>
+
+    <div class="projects-tabs" id="tabs"></div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<section class="steps" id="metodologia">
+  <div class="container">
+    <h2 class="section-title">Como Funciona Nosso Processo?</h2>
+    <p class="section-subtitle">Realizar o seu sonho é mais simples e planejado do que você imagina.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">1</div>
+        <h3>Briefing & Escuta</h3>
+        <p>Entendemos a fundo sua rotina, seus gostos, desejos e o orçamento disponível para investir.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">2</div>
+        <h3>Estudo e Layout</h3>
+        <p>Desenvolvemos a melhor distribuição do espaço focado em conforto físico, circulação e utilidade real.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">3</div>
+        <h3>Entrega & Sonho</h3>
+        <p>Você recebe o guia completo com as especificações ideais para executar sua obra sem dores de cabeça.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container cta-content">
+    <h2>Vamos concretizar esse sonho juntos?</h2>
+    <p>Clique no botão abaixo para conversar comigo agora mesmo pelo WhatsApp.</p>
+    <a href="https://wa.me/5513998021412?text=Ol%C3%A1%20Priscila,%20vi%20sua%20p%C3%A1gina%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!" target="_blank" class="btn btn-whatsapp" style="font-size:1.2rem;padding:18px 40px;">Falar com a Priscila no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p>&copy; 2026 Priscila Barbosa Designer de Interiores. Todos os direitos reservados.</p>
+      <p style="font-size:0.8rem;margin-top:5px;opacity:0.6;">Praia Grande e toda Região Metropolitana de São Paulo.</p>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/priscilabarbosa_designer" target="_blank">Instagram</a>
+      <a href="https://wa.me/5513998021412" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Assets embutidos (substituídos por data URIs no build final) ----
+  const IMG_PRISCILA = "images/priscila.jpg";
+  const IMG_COZINHA = "images/cozinha.jpeg";
+  const IMG_DORMITORIO = "images/dormitorio.jpeg";
+  const IMG_SALA = "images/sala.jpeg";
+  const PDF_PROJETO = "pdfs/apresentacao-projeto.pdf";
+  const PDF_COZINHA = "pdfs/apresentacao-cozinha.pdf";
+  const IMG_PLANTA = [
+    "images/planta/planta-01.jpeg","images/planta/planta-02.jpeg","images/planta/planta-03.jpeg",
+    "images/planta/planta-04.jpeg","images/planta/planta-05.jpeg","images/planta/planta-06.jpeg",
+    "images/planta/planta-07.jpeg","images/planta/planta-08.jpeg","images/planta/planta-09.jpeg",
+    "images/planta/planta-10.jpeg","images/planta/planta-11.jpeg","images/planta/planta-12.jpeg",
+    "images/planta/planta-13.jpeg"
+  ];
+
+  // Fotos estáticas do topo (fora do JS de tabs) recebem o src direto
+  document.getElementById('img-priscila').src = IMG_PRISCILA;
+  document.getElementById('img-cozinha-1').src = IMG_COZINHA;
+  document.getElementById('img-dormitorio-1').src = IMG_DORMITORIO;
+  document.getElementById('img-sala-1').src = IMG_SALA;
+
+  // Converte um data:URI grande em Blob URL — necessário pois navegadores bloqueiam
+  // silenciosamente a navegação direta (target=_blank) para data:URIs grandes.
+  function dataURItoBlobURL(dataURI) {
+    if (!dataURI.startsWith('data:')) return dataURI; // já é um caminho normal, sem embutir
+    const [header, base64] = dataURI.split(',');
+    const mime = header.match(/data:(.*?);base64/)[1];
+    const binary = atob(base64);
+    const array = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) array[i] = binary.charCodeAt(i);
+    const blob = new Blob([array], { type: mime });
+    return URL.createObjectURL(blob);
+  }
+
+  const PDF_PROJETO_URL = dataURItoBlobURL(PDF_PROJETO);
+  const PDF_COZINHA_URL = dataURItoBlobURL(PDF_COZINHA);
+
+  const tabs = [
+    { id: "todos", label: "Todos" },
+    { id: "cozinha", label: "Cozinha" },
+    { id: "dormitorio", label: "Dormitório" },
+    { id: "sala", label: "Sala" },
+    { id: "planta", label: "Projeto com Planta" },
+  ];
+
+  const projects = [
+    { category: "cozinha", image: IMG_COZINHA, pdfUrl: PDF_COZINHA_URL },
+    { category: "dormitorio", image: IMG_DORMITORIO, pdfUrl: PDF_PROJETO_URL },
+    { category: "sala", image: IMG_SALA, pdfUrl: PDF_PROJETO_URL },
+    ...IMG_PLANTA.map(img => ({ category: "planta", image: img, pdfUrl: PDF_PROJETO_URL })),
+  ];
+
+  let activeTab = "todos";
+
+  function renderTabs() {
+    const el = document.getElementById("tabs");
+    el.innerHTML = tabs.map(t =>
+      `<button type="button" class="tab-btn ${t.id === activeTab ? "active" : ""}" data-tab="${t.id}">${t.label}</button>`
+    ).join("");
+    el.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeTab = btn.dataset.tab;
+        renderTabs();
+        renderProjects();
+      });
+    });
+  }
+
+  function renderProjects() {
+    const list = activeTab === "todos" ? projects : projects.filter(p => p.category === activeTab);
+    document.getElementById("projects-grid").innerHTML = list.map(p => `
+      <div class="project-card">
+        <div class="project-img-wrapper"><img src="${p.image}" alt="Projeto de interiores"></div>
+        <div class="project-card-bottom">
+          <a href="${p.pdfUrl}" target="_blank" rel="noopener" class="project-pdf-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+            Ver Projeto Completo
+          </a>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  renderTabs();
+  renderProjects();
+</script>
+
+</body>
+</html>

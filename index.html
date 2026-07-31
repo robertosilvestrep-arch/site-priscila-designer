@@ -14,20 +14,20 @@
       img { max-width: 100%; display: block; }
       
       :root {
-        --primary: #000000;     /* Preto absoluto para máximo contraste */
+        --primary: #000000;     
         --secondary: #F0F2F5;   
-        --accent: #D36C45;      /* Terracota vibrante para dar vida e elegância */
-        --light-bg: #F8F9FA;    /* Fundo levemente cinza para destacar o branco */
+        --accent: #D36C45;      
+        --light-bg: #F8F9FA;    
         --white: #FFFFFF;
-        --text-muted: #333333;  /* Cinza bem escuro, muito mais legível */
+        --text-muted: #333333;  
         --font-heading: 'Montserrat', sans-serif;
         --font-body: 'Inter', sans-serif;
       }
 
       body { 
         font-family: var(--font-body); 
-        font-weight: 400;       /* Fonte mais encorpada */
-        font-size: 1.05rem;     /* Letra levemente maior */
+        font-weight: 400;       
+        font-size: 1.05rem;     
         color: var(--primary); 
         line-height: 1.8; 
         background-color: var(--light-bg);
@@ -35,14 +35,14 @@
 
       .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
       
-      /* Botões - Mais vivos e com leve sombra */
+      /* Botões */
       .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 32px; border-radius: 4px; font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; border: 1px solid transparent; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .btn-primary { background-color: var(--primary); color: var(--white); }
       .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
       .btn-whatsapp { background-color: #25D366; color: var(--white); box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
       .btn-whatsapp:hover { transform: translateY(-3px); background-color: #1EAB52; box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
       
-      /* Títulos - Mais grossos e marcantes */
+      /* Títulos */
       .section-title { font-family: var(--font-heading); font-size: 2.6rem; color: var(--primary); text-align: center; margin-bottom: 16px; font-weight: 700; letter-spacing: -0.5px; }
       .section-subtitle { font-size: 1.15rem; color: var(--text-muted); text-align: center; margin-bottom: 56px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 400; }
       
@@ -66,9 +66,11 @@
       .hero-content h1 { font-family: var(--font-heading); font-size: 3.5rem; line-height: 1.15; color: var(--primary); margin-bottom: 16px; font-weight: 700; letter-spacing: -1px; }
       .hero-subtitle { font-family: var(--font-heading); font-size: 1.15rem; color: var(--accent); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
       .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 400; }
+      
+      /* CORREÇÃO AQUI: Altura automática para a foto não cortar nem estourar o limite */
       .hero-image-container { display: flex; justify-content: center; }
-      .hero-img-box { width: 100%; max-width: 460px; height: 560px; background-color: var(--secondary); border-radius: 8px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-      .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
+      .hero-img-box { width: 100%; max-width: 600px; height: auto; background-color: transparent; border-radius: 8px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin: 0 auto; }
+      .hero-img-box img { width: 100%; height: auto; object-fit: contain; display: block; }
       
       /* Cards de Projetos */
       .home-projects { padding: 90px 0; background-color: var(--light-bg); }
@@ -124,12 +126,17 @@
       .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
       .whatsapp-float:hover { transform: scale(1.1); color: white; }
       
-      /* Responsividade */
+      /* Responsividade para Celular */
       @media (max-width: 968px) {
         .contact-grid, .hero-grid { grid-template-columns: 1fr; }
         .hero-grid { text-align: center; gap: 40px; }
         .hero-content h1 { font-size: 2.8rem; }
         .hero-image-container { order: -1; }
+        
+        /* Ajuste fino para a caixa da imagem não vazar no celular */
+        .hero-img-box { max-width: 100%; box-shadow: none; border-radius: 0; margin-bottom: 10px; }
+        .hero-img-box img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
         .cta-content h2 { font-size: 2.4rem; }
         
         .hamburger { display: flex; }

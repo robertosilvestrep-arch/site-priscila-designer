@@ -15,12 +15,12 @@
       
       :root {
         /* Paleta Moderna e Sofisticada */
-        --primary: #1A1A1A;     /* Preto/Chumbo elegante */
-        --secondary: #EAEAEA;   /* Cinza muito claro para fundos secundários */
-        --accent: #9A8B78;      /* Tom Fendi / Taupe (elegante) */
-        --light-bg: #FDFDFD;    /* Quase branco */
+        --primary: #1A1A1A;     
+        --secondary: #EAEAEA;   
+        --accent: #9A8B78;      
+        --light-bg: #FDFDFD;    
         --white: #FFFFFF;
-        --text-muted: #666666;  /* Cinza médio para textos de apoio */
+        --text-muted: #666666;  
         --font-heading: 'Montserrat', sans-serif;
         --font-body: 'Inter', sans-serif;
       }
@@ -35,24 +35,30 @@
 
       .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
       
-      /* Botões mais retos e modernos */
+      /* Botões */
       .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 32px; border-radius: 2px; font-family: var(--font-heading); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.4s ease; border: 1px solid transparent; }
       .btn-primary { background-color: var(--primary); color: var(--white); }
       .btn-primary:hover { background-color: var(--white); color: var(--primary); border-color: var(--primary); }
       .btn-whatsapp { background-color: #25D366; color: var(--white); }
       .btn-whatsapp:hover { background-color: #1EAB52; }
       
-      /* Tipografia de Títulos */
+      /* Títulos */
       .section-title { font-family: var(--font-heading); font-size: 2.4rem; color: var(--primary); text-align: center; margin-bottom: 16px; font-weight: 400; letter-spacing: -0.5px; }
       .section-subtitle { font-size: 1.05rem; color: var(--text-muted); text-align: center; margin-bottom: 56px; max-width: 650px; margin-left: auto; margin-right: auto; font-weight: 300; }
       
+      /* Header e Navegação */
       header { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid #F0F0F0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(5px); }
       .nav-container { display: flex; justify-content: space-between; align-items: center; height: 90px; }
       .logo-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; }
       .logo-sub { font-size: 0.75rem; color: var(--accent); font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+      
       .nav-menu { display: flex; gap: 36px; align-items: center; }
       .nav-link { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); transition: color 0.3s ease; }
       .nav-link:hover { color: var(--accent); }
+      
+      /* Menu Hambúrguer (Oculto no Desktop) */
+      .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
+      .hamburger span { width: 28px; height: 2px; background-color: var(--primary); transition: all 0.3s ease; }
       
       /* Hero Section */
       .hero { padding: 80px 0 100px; background-color: var(--light-bg); overflow: hidden; }
@@ -62,7 +68,6 @@
       .hero-content p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 300; }
       .hero-image-container { display: flex; justify-content: center; }
       .hero-img-box { width: 100%; max-width: 460px; height: 560px; background-color: var(--secondary); border-radius: 2px; overflow: hidden; position: relative; }
-      .hero-img-box::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(0,0,0,0.05); pointer-events: none; }
       .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
       
       /* Cards de Projetos */
@@ -76,11 +81,10 @@
       .home-project-info { padding: 24px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
       .home-project-info h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 500; color: var(--primary); margin-bottom: 6px; }
       .home-project-info span { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 16px; }
-      
       .project-pdf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background-color: transparent; color: var(--primary); border: 1px solid var(--primary); border-radius: 2px; font-size: 0.85rem; font-family: var(--font-heading); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; cursor: pointer; width: 100%; justify-content: center; }
       .project-pdf-btn:hover { background-color: var(--primary); color: var(--white); }
       
-      /* Steps / Metodologia */
+      /* Metodologia */
       .steps { padding: 100px 0; background-color: var(--light-bg); }
       .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 56px; }
       .step-card { text-align: left; padding: 40px; border-radius: 2px; border: 1px solid #F0F0F0; background-color: var(--white); transition: all 0.4s ease; }
@@ -95,22 +99,20 @@
       .cta-content h2 { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 300; margin-bottom: 24px; line-height: 1.2; letter-spacing: -0.5px; }
       .cta-content p { font-size: 1.15rem; margin-bottom: 48px; color: #CCCCCC; font-weight: 300; }
       
-      /* Formulário de Contato */
+      /* Contato */
       .contact-section { padding: 100px 0; background-color: var(--white); }
       .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
       .contact-info { background-color: var(--light-bg); border: 1px solid #F0F0F0; border-radius: 2px; padding: 48px; }
       .contact-info h3 { font-family: var(--font-heading); color: var(--primary); font-size: 1.5rem; font-weight: 400; margin-bottom: 32px; }
       .contact-info-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; font-size: 1rem; color: var(--text-muted); }
-      
       .contact-form { display: flex; flex-direction: column; gap: 24px; }
       .contact-form label { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 500; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
       .contact-form input, .contact-form textarea { width: 100%; padding: 16px; border: 1px solid #E0E0E0; border-radius: 2px; font-size: 0.95rem; font-family: var(--font-body); background-color: var(--white); transition: all 0.3s ease; }
       .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(154, 139, 120, 0.1); }
       .contact-form textarea { resize: vertical; min-height: 140px; }
       .contact-submit-btn { background-color: var(--primary); color: var(--white); border: none; padding: 16px 32px; font-family: var(--font-heading); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background-color 0.3s ease; border-radius: 2px; }
-      .contact-submit-btn:hover { background-color: var(--accent); }
       
-      /* Footer & WhatsApp Float */
+      /* Footer */
       footer { background-color: #111111; color: #888888; padding: 60px 0; font-size: 0.9rem; border-top: 1px solid #222222; }
       .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
       .footer-socials { display: flex; gap: 24px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
@@ -118,16 +120,44 @@
       .footer-socials a:hover { color: var(--white); }
       
       .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 9999; transition: transform 0.3s ease; }
-      .whatsapp-float:hover { transform: scale(1.05); }
-
+      
+      /* =========================================
+         RESPONSIVIDADE (MOBILE & TABLET)
+         ========================================= */
       @media (max-width: 968px) {
-        .contact-grid { grid-template-columns: 1fr; }
-        .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-        .hero-content h1 { font-size: 2.8rem; }
+        .contact-grid, .hero-grid { grid-template-columns: 1fr; }
+        .hero-grid { text-align: center; gap: 40px; }
+        .hero-content h1 { font-size: 2.5rem; }
         .hero-image-container { order: -1; }
-        .nav-menu { display: none; }
         .cta-content h2 { font-size: 2.2rem; }
-        .home-projects-grid { grid-template-columns: 1fr; }
+        
+        /* Configuração do Menu Mobile */
+        .hamburger { display: flex; }
+        .nav-menu {
+            position: absolute;
+            top: 90px;
+            left: -100%;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.98);
+            width: 100%;
+            text-align: center;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            gap: 0;
+            padding: 20px 0;
+        }
+        .nav-menu.active {
+            left: 0;
+        }
+        .nav-link {
+            display: block;
+            padding: 15px 0;
+            width: 100%;
+        }
+        /* Animação do ícone quando ativo */
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
       }
     </style>
 </head>
@@ -140,7 +170,16 @@
                 <div class="logo-name">Priscila Barbosa</div>
                 <div class="logo-sub">Design de Interiores</div>
             </div>
-            <nav class="nav-menu">
+            
+            <!-- Ícone Hamburguer -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Menu de Navegação -->
+            <nav class="nav-menu" id="nav-menu">
                 <a href="#inicio" class="nav-link">Início</a>
                 <a href="#projetos" class="nav-link">Projetos</a>
                 <a href="#metodologia" class="nav-link">Metodologia</a>
@@ -160,7 +199,6 @@
             </div>
             <div class="hero-image-container">
                 <div class="hero-img-box">
-                    <!-- Substitua pelo caminho da foto principal dela -->
                     <img src="assets/foto-perfil-ou-projeto.jpg" alt="Priscila Barbosa - Design de Interiores">
                 </div>
             </div>
@@ -184,9 +222,7 @@
                             <h3>Apartamento Leblon</h3>
                             <span>Residencial</span>
                         </div>
-                        <a href="assets/projeto-leblon.pdf" target="_blank" class="project-pdf-btn">
-                            Ver Projeto (PDF)
-                        </a>
+                        <a href="assets/projeto-leblon.pdf" target="_blank" class="project-pdf-btn">Ver Projeto (PDF)</a>
                     </div>
                 </div>
 
@@ -200,9 +236,7 @@
                             <h3>Escritório Vogue</h3>
                             <span>Corporativo</span>
                         </div>
-                        <a href="assets/projeto-vogue.pdf" target="_blank" class="project-pdf-btn">
-                            Ver Projeto (PDF)
-                        </a>
+                        <a href="assets/projeto-vogue.pdf" target="_blank" class="project-pdf-btn">Ver Projeto (PDF)</a>
                     </div>
                 </div>
 
@@ -216,9 +250,7 @@
                             <h3>Clínica Jardins</h3>
                             <span>Comercial</span>
                         </div>
-                        <a href="assets/projeto-clinica.pdf" target="_blank" class="project-pdf-btn">
-                            Ver Projeto (PDF)
-                        </a>
+                        <a href="assets/projeto-clinica.pdf" target="_blank" class="project-pdf-btn">Ver Projeto (PDF)</a>
                     </div>
                 </div>
             </div>
@@ -265,19 +297,12 @@
         <div class="container contact-grid">
             <div class="contact-info">
                 <h3>Informações de Contato</h3>
-                <div class="contact-info-item">
-                    <span>E-mail: contato@priscilabarbosadesigner.com.br</span>
-                </div>
-                <div class="contact-info-item">
-                    <span>Telefone: (11) 99999-9999</span>
-                </div>
-                <div class="contact-info-item">
-                    <span>Atendimento de Segunda a Sexta, das 9h às 18h</span>
-                </div>
+                <div class="contact-info-item"><span>E-mail: contato@priscilabarbosadesigner.com.br</span></div>
+                <div class="contact-info-item"><span>Telefone: (11) 99999-9999</span></div>
+                <div class="contact-info-item"><span>Atendimento: Seg a Sex, 9h às 18h</span></div>
             </div>
             
             <div>
-                <!-- Substitua 'SEU_CODIGO_AQUI' pelo endpoint gerado no Formspree -->
                 <form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST" class="contact-form">
                     <div>
                         <label for="name">Nome Completo</label>
@@ -309,11 +334,29 @@
         </div>
     </footer>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <!-- Coloque o número correto dela no link abaixo -->
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-        &#10006; <!-- Ícone temporário ou substitua pelo SVG/FontAwesome do WhatsApp -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" title="Fale conosco">
+        &#10006; 
     </a>
 
+    <!-- SCRIPT DO MENU MOBILE -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Abre/Fecha o menu ao clicar no hambúrguer
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fecha o menu automaticamente quando clicar em algum link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
